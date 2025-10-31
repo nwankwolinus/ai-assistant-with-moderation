@@ -164,10 +164,3 @@ The assistant triggers web searches for:
 
 ---
 
-✅ **All links above (Hugging Face, localhost, GitHub, model docs)** are now clickable.
-If it still appears as plain text in your preview, check that:
-
-* You didn’t accidentally wrap the entire README inside ```markdown code fences.
-* The file extension is `.md`.
-
-Would you like me to format this version for **Hugging Face Spaces** display (they sometimes render Markdown slightly differently than GitHub)?
