@@ -49,8 +49,6 @@ Basic image analysis provides:
 - Basic metadata information
 ```
 
-## README.md (Part 2/2)
-
 ```markdown
 ## 🏗️ Architecture
 
