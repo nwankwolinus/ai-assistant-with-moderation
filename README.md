@@ -62,7 +62,7 @@ git clone https://github.com/yourusername/ai-assistant-with-moderation.git
 cd ai-assistant-with-moderation
 ```
 
-**Repository:** [https://github.com/yourusername/ai-assistant-with-moderation](https://github.com/yourusername/ai-assistant-with-moderation)
+**Repository:** [https://github.com/nwankwolinus/ai-assistant-with-moderation.git](https://github.com/nwankwolinus/ai-assistant-with-moderation.git)
 
 ### 2️⃣ Install dependencies
 
