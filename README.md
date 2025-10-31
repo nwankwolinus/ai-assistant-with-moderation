@@ -16,7 +16,7 @@ A comprehensive AI assistant featuring content moderation, real-time web search,
 ## 🚀 Demo
 
 Try the live demo on Hugging Face Spaces:  
-👉 [https://huggingface.co/spaces/nwankwolinus/gpt-4o-mini_chatbot](https://huggingface.co/spaces/nwankwolinus/gpt-4o-mini_chatbot)
+(https://huggingface.co/spaces/nwankwolinus/gpt-4o-mini_chatbot)
 
 ## 🛡️ Moderation Features
 
