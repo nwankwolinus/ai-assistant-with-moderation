@@ -1,74 +1,55 @@
-## README.md 
+## README.md (Part 1/2)
 
 ```markdown
-# 🤖 AI Assistant with Moderation & Real-Time Search
+# 🤖 Multimodal AI Assistant
 
-A comprehensive AI assistant featuring content moderation, real-time web search, voice I/O, and basic image analysis. This intelligent chatbot automatically filters harmful content and provides up-to-date information through Google Search integration.
+An intelligent assistant built with **Together AI**, capable of:
 
-## ✨ Features
+- 🗣️ Understanding and responding to **voice input** (using Whisper)
+- 🧠 Generating natural replies with **Together AI's Llama-3-70b**
+- 🖼️ Analyzing uploaded **images**
+- 🌐 Performing **real-time web search** (via Google CSE)
+- 🔊 Replying back with **voice output** (using gTTS)
 
-- ✅ **Input/Output Moderation** - Automatic filtering of banned keywords
-- ✅ **Real-Time Google Search** - Automatic web search for current information  
-- ✅ **Voice Input/Output** - Speech-to-text and text-to-speech capabilities
-- ✅ **Basic Image Analysis** - Image properties and metadata
-- ✅ **Safety First** - Content moderation at both input and output stages
+## 🚀 Live Demo
 
-## 🚀 Demo
+[**Live Demo**](https://huggingface.co/spaces/nwankwolinus/gpt-4o-mini_chatbot)
 
-Try the live demo on Hugging Face Spaces:  
-(https://huggingface.co/spaces/nwankwolinus/gpt-4o-mini_chatbot)
+## 🔧 Features
 
-## 🛡️ Moderation Features
+- 🎤 **Voice-to-Text**: Users can speak, and Whisper will transcribe the speech in real-time.
+- 💬 **Chat Interface**: Powered by Together AI for fluent, natural conversation.
+- 🖼️ **Image Analysis**: Upload an image and receive contextual visual analysis.
+- 🔍 **Web Search**: Automatically detects when current data is needed and performs a web search using Google Custom Search API.
+- 🔊 **Text-to-SSpeech**: AI responses are read aloud using Google Text-to-Speech (gTTS).
+- 🛡️ **Content Moderation**: Built-in input/output filtering for safety.
 
-The assistant automatically filters these banned keywords:
-- `kill`, `bomb`, `hack`, `terror`, `attack`
-- `suicide`, `murder`, `violence`, `harm`, `dangerous`
+## 🛠️ Tech Stack
 
-Inputs containing these keywords are blocked, and outputs are automatically redacted with `[REDACTED]` placeholders.
+- **Frontend/UI**: Gradio
+- **Backend**: Python
+- **AI Models**:
+  - [Together AI Llama-3-70b](https://together.ai/)
+  - [Whisper (Speech-to-Text)](https://github.com/openai/whisper)
+  - [gTTS (Text-to-Speech)](https://pypi.org/project/gTTS/)
+- **Real-time Search**: Google Custom Search API
+- **Deployment Options**: Localhost / Hugging Face Spaces / Render / Colab
 
-## 🔍 Real-Time Search
+## 🔐 Environment Variables
 
-Automatically triggers web search for queries containing:
-- **Time-sensitive words**: `latest`, `current`, `today`, `now`, `recent`
-- **News-related**: `news`, `breaking`, `live`, `update`
-- **Information queries**: `who is`, `what is`, `when is`, `where is`
-- **Current events**: `weather`, `scores`, `stock`, `price`
+Create a `.env` or use secret manager with the following keys:
 
-## 🎤 Voice Features
-
-- **Voice Input**: Click the microphone icon to speak your queries
-- **Voice Output**: Automatic text-to-speech for AI responses
-- **Speech Recognition**: Powered by OpenAI Whisper for accurate transcription
-
-## 📷 Image Support
-
-Basic image analysis provides:
-- Image dimensions (width × height)
-- File format (JPEG, PNG, etc.)
-- Color mode (RGB, Grayscale, etc.)
-- Basic metadata information
+```bash
+TOGETHER_API_KEY=your_together_ai_key
+GOOGLE_API_KEY=your_google_api_key
+GOOGLE_CSE_ID=your_google_custom_search_engine_id
+```
 ```
 
+## README.md (Part 2/2)
+
 ```markdown
-## 🏗️ Architecture
-
-- **AI Backend**: Together AI (Llama-3-70b-chat-hf)
-- **Web Search**: Google Custom Search API
-- **Speech Recognition**: OpenAI Whisper
-- **Text-to-Speech**: Google Text-to-Speech (gTTS)
-- **Web Interface**: Gradio
-- **Content Moderation**: Custom keyword filtering system
-
-## 🔧 Setup & Installation
-
-### Prerequisites
-
-- Python 3.8+
-- API keys for:
-  - [Together AI](https://together.ai/)
-  - [Google Custom Search API](https://developers.google.com/custom-search/v1/introduction)
-
-### Installation
+## 📦 Installation & Setup
 
 1. **Clone the repository**
    ```bash
@@ -81,15 +62,10 @@ Basic image analysis provides:
    pip install -r requirements.txt
    ```
 
-3. **Set up environment variables**
+3. **Configure environment variables**
    ```bash
    cp .env.example .env
-   ```
-   Edit `.env` with your API keys:
-   ```env
-   TOGETHER_API_KEY=your_together_api_key_here
-   GOOGLE_API_KEY=your_google_api_key_here
-   GOOGLE_CSE_ID=your_google_cse_id_here
+   # Edit .env with your API keys
    ```
 
 4. **Run the application**
@@ -97,77 +73,73 @@ Basic image analysis provides:
    python app.py
    ```
 
-5. **Open your browser**
-   Navigate to `http://localhost:7860`
-
-## 📁 Project Structure
-
-```
-ai-assistant-with-moderation/
-├── app.py              # Main application
-├── requirements.txt    # Python dependencies
-├── README.md          # Project documentation
-├── .env.example       # Environment variables template
-└── .gitignore         # Git ignore rules
-```
+5. **Access the application**
+   Open your browser and navigate to `http://localhost:7860`
 
 ## 🎯 Usage Examples
 
-### Text Conversations
-```
-User: "What are the latest technology news?"
-AI: Provides current tech news with real-time search results
-```
-
-### Voice Interactions
-```
-User: [Speaks] "What's the weather like today?"
-AI: [Speaks response] Provides current weather information
-```
+### Voice Conversation
+- Click the microphone icon and speak your question
+- AI will transcribe, process, and respond with voice output
 
 ### Image Analysis
+- Upload an image and ask questions about it
+- Get detailed analysis and descriptions
+
+### Real-time Search
+- Ask about current events: "What's the latest tech news?"
+- Get up-to-date information with web search integration
+
+### Text Chat
+- Type your questions for instant AI responses
+
+## 🏗️ Project Structure
+
 ```
-User: Uploads an image + "What can you tell me about this image?"
-AI: Provides image dimensions, format, and basic information
+multimodal-ai-assistant/
+├── app.py                 # Main application
+├── requirements.txt       # Python dependencies
+├── README.md             # Project documentation
+├── .env.example          # Environment template
+└── .gitignore            # Git ignore rules
 ```
 
-### Moderation Examples
-```
-User: "How to make a bomb?" 
-AI: "❌ Your input violated the moderation policy. Banned keyword: 'bomb'"
-```
+## 🔍 Real-Time Search Triggers
 
-## 🐛 Troubleshooting
+The assistant automatically performs web searches for:
+- `latest`, `current`, `today`, `now`, `recent`
+- `news`, `breaking`, `live`, `update`
+- `who is`, `what is`, `when is`, `where is`
+- `weather`, `scores`, `stock`, `price`
 
-### Common Issues
+## 🛡️ Safety Features
 
-1. **API Key Errors**
-   - Verify your API keys are set in environment variables
-   - Check that services are properly enabled
-
-2. **Audio Issues**
-   - Ensure microphone permissions are granted in browser
-   - Check browser audio settings
-
-3. **Search Not Working**
-   - Verify Google CSE is properly configured
-   - Check API quota limits
-
-## 📄 License
-
-This project is licensed under the MIT License.
+- **Input Moderation**: Blocks queries with harmful keywords
+- **Output Moderation**: Redacts unsafe content in responses
+- **Banned Keywords**: kill, bomb, hack, terror, attack, violence, etc.
 
 ## 🤝 Contributing
 
-1. Fork the project
-2. Create your feature branch
+1. Fork the repository
+2. Create a feature branch
 3. Commit your changes
 4. Push to the branch
 5. Open a Pull Request
+
+## 📄 License
+
+MIT License - feel free to use this project for personal or commercial purposes.
 
 ---
 
 **Built with ❤️ using Together AI, Google Search, and Gradio**
 ```
 
-Copy each part separately and combine them in your README.md file!
+Now your README has:
+- ✅ Clickable **"Live Demo"** link
+- ✅ Updated to reflect Together AI instead of OpenAI
+- ✅ Clean, modern formatting
+- ✅ All features clearly listed
+- ✅ Easy setup instructions
+
+Copy each part separately and combine them! 🚀
