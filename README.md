@@ -1,14 +1,3 @@
-Got it 👍 — let’s fix that.
-
-If your **README** is showing the Hugging Face or localhost links as plain text (not clickable), it’s usually because:
-
-* The file is inside a code block (triple backticks ```), or
-* Markdown rendering is being escaped by indentation or missing blank lines.
-
-Below is a **clean, fully functional version** — all clickable links will render correctly on **GitHub**, **Hugging Face**, or **VS Code preview** 👇
-
----
-
 # 🤖 Multimodal AI Assistant
 
 An intelligent assistant built with **Together AI**, capable of:
